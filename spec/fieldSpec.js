@@ -18,17 +18,4 @@ describe("Field", function(){
     })
   })
 
-  describe("claim_field", function(){
-    it("set a field as taken", function(){
-      field.availability = "empty"
-
-      expect(field.claim()).toEqual("taken")
-    })
-
-    it("throw an error if the field is already taken", function(){
-      field.availability = "taken"
-      
-      expect(function(){field.claim()}).toThrow('Field already taken')
-    })
-  })
 })
