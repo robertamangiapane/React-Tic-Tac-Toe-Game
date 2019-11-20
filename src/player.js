@@ -1,5 +1,5 @@
 function Player() {
-  this.turn = ""
+  this.turn = false
   this.result = ""
 }
 

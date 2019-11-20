@@ -3,7 +3,6 @@ describe("Game", function(){
     game = new Game()
     game.playerX = jasmine.createSpy('player')
     game.playerO = jasmine.createSpy('player')
-    game.field = jasmine.createSpy('field')
   })
 
   describe("result", function(){
@@ -12,7 +11,7 @@ describe("Game", function(){
       game.playerO.result = "lose"
       game.gameover = true
 
-      expect(game.result()).toEqual("playerX win! playerO lose! Game Over!")
+      expect(game.result()).toEqual("PlayerX win! PlayerO lose! Game Over!")
     })
 
     it("return playerO win", function(){
@@ -20,7 +19,7 @@ describe("Game", function(){
       game.playerX.result = "lose"
       game.gameover = true
 
-      expect(game.result()).toEqual("playerO win! playerX lose! Game Over!")
+      expect(game.result()).toEqual("PlayerO win! PlayerX lose! Game Over!")
     })
 
     it("return a tie", function(){
@@ -41,26 +40,65 @@ describe("Game", function(){
   })
 
   describe("claim_field", function(){
-    it("let a player claim a field if is available", function(){
-      game.field.availability = "empty"
+    it("let player X claim a field if is available", function(){
+      game.turn = "X"
 
-      expect(game.claim_field()).toEqual("playerX turn ended.")
+      expect(game.claim_field(1)).toEqual("Turn ended.")
     })
 
-    it("throw an error if the field is already taken", function(){
-      game.field.availability = "taken"
+    it("field is claimed by the player X", function(){
+      game.turn = "X"
+      game.claim_field(1)
 
-      expect(function(){game.claim_field()}).toThrow('Field already taken')
+      expect(game.fields[1]).toEqual("X")
+    })
+
+    it("throw an error if the field is already taken bu PlayerX", function(){
+      game.fields[1] = "X"
+
+      expect(function(){game.claim_field(1)}).toThrow('Field already taken by PlayerX')
+    })
+
+    it("throw an error if the field is already taken bu PlayerO", function(){
+      game.fields[1] = "O"
+
+      expect(function(){game.claim_field(1)}).toThrow('Field already taken by PlayerO')
     })
   })
 
-  describe("switch_player_turn", function(){
-    it("switch the turn of a player", function(){
-      game.turn = "playerX"
-      game.switch_player_turn()
+  describe("_switch_player_turn", function(){
+    it("switch the turn of the PlayerX", function(){
+      game.turn = "X"
+      game._switch_player_turn()
 
-      expect(game.playerX.turn).toEqual("end")
+      expect(game.playerX.turn).toEqual(false)
+      expect(game.playerO.turn).toEqual(true)
 
+    })
+
+    it("switch the turn of the PlayerO", function(){
+      game.turn = "O"
+      game._switch_player_turn()
+
+      expect(game.playerO.turn).toEqual(false)
+      expect(game.playerX.turn).toEqual(true)
+    })
+
+  })
+
+  describe("_set_first_turn", function(){
+    it("start the game with random turn for PlayerX", function(){
+      spyOn(game, '_random_turn').and.returnValue("X")
+      game._set_first_turn()
+
+      expect(game.playerX.turn).toEqual(true)
+    })
+
+    it("start the game with random turn for PlayerO", function(){
+      spyOn(game, '_random_turn').and.returnValue("O")
+      game._set_first_turn()
+
+      expect(game.playerO.turn).toEqual(true)
     })
   })
 })
