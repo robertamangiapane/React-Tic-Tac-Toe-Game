@@ -9,27 +9,19 @@ function Game(){
 
 Game.prototype._set_first_turn = function(){
   this.turn = this._random_turn()
-  if(this.turn === "X"){
-    this.playerX.turn = true
-    this.playerO.turn = false
-  } else {
-    this.playerX.turn = false
-    this.playerO.turn = true
-  }
   return this.turn
 }
 
 Game.prototype.result = function(){
-  if (this.gameover === true && this.playerX.result === "win"){
-    return "PlayerX win! PlayerO lose! Game Over!"
-  } else if (this.gameover === true && this.playerO.result === "win") {
-    return "PlayerO win! PlayerX lose! Game Over!"
+  if (this.gameover === false){
+    return "The game is not over yet!"
   } else if (this.gameover === true && this.playerX.result === "" && this.playerO.result === ""){
     return "It's a tie. Game Over!"
-  } else if (this.gameover === false){
-    return "The game is not over yet!"
+  } else if (this.gameover === true){
+    return "PlayerX " + this.playerX.result + " PlayerO " +  this.playerO.result + " Game Over!"
   }
 }
+
 
 Game.prototype.claim_field = function(index){
 
@@ -44,12 +36,8 @@ Game.prototype.claim_field = function(index){
 
 Game.prototype._switch_player_turn = function(){
   if(this.turn === "X"){
-    this.playerX.turn = false
-    this.playerO.turn = true
     return this.turn = "O"
   } else {
-    this.playerX.turn = true
-    this.playerO.turn = false
     return this.turn = "X"
   }
 }
