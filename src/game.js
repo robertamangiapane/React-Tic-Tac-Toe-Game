@@ -9,15 +9,24 @@ function Game(){
 
 }
 
+Game.prototype.start_game = function(){
+  this.turn = this._random_turn()
+  return this.turn
+}
+
+Game.prototype._random_turn = function(){
+  player = ~~(Math.random() * this.players.length());
+  return this.players[player];
+}
+
 Game.prototype.claim_field = function(index){
-  console.log(this.fields[1])
-  console.log("this field index inside claim field", this.fields[index])
   if(this.fields[index] === "X" || this.fields[index] === "O") {
     throw 'Field already taken by Player' + this.fields[index]
   } else {
-    this._set_taken_field(index)
-    this._check_match()
+    this._set_game_over()
+    this.fields = this._set_taken_field(index)
     this._check_gameover()
+    return this.fields
   }
 }
 
@@ -25,7 +34,7 @@ Game.prototype._check_gameover = function(){
   if(this.gameover === true){
     this.result()
   } else {
-    this._switch_player_turn()
+    this.turn = this._switch_player_turn()
   }
 }
 
@@ -40,7 +49,7 @@ Game.prototype.result = function(){
   }
 }
 
-Game.prototype._check_match = function(){
+Game.prototype._set_game_over = function(){
   result = []
   this._rows_columns_matrix()
 
@@ -51,7 +60,7 @@ Game.prototype._check_match = function(){
   if(result.includes(3)){
     this.gameover = true
     this._check_player_result()
-  }else if(!result.includes(3)){
+  }else{
     if(!this.fields.includes("")){
       this.gameover = true
       this.playerX.result = ""
@@ -60,27 +69,16 @@ Game.prototype._check_match = function(){
   }
 }
 
-Game.prototype._set_first_turn = function(){
-  this.turn = this._random_turn()
-  this.turn
-}
-
-Game.prototype._random_turn = function(){
-  player = ~~(Math.random() * this.players.length());
-  return this.players[player];
-}
-
 Game.prototype._set_taken_field = function(index){
-  console.log("this fields", this.fields)
-  console.log("this field index", this.fields[index])
   this.fields[index] = this.turn
+  return this.fields
 }
 
 Game.prototype._switch_player_turn = function(){
   if(this.turn === "X"){
-    this.turn = "O"
+    return "O"
   } else {
-    this.turn = "X"
+    return "X"
   }
 }
 
