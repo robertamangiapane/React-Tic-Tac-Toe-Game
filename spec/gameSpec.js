@@ -3,8 +3,6 @@ describe("Game", function(){
     game = new Game()
     game.board = jasmine.createSpy('board')
     game.start_game()
-    // game.playerX = jasmine.createSpy('player')
-    // game.playerO = jasmine.createSpy('player')
   })
 
   describe("start_game", function(){
@@ -16,7 +14,6 @@ describe("Game", function(){
   })
 
   describe("claim_field", function(){
-  //
     it("let player X claim a field", function(){
       game.board.fields = ["O", "", "", "", "", "", "", "", ""]
       game.board.gameover = false
