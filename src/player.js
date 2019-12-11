@@ -1,3 +1,7 @@
-function Player() {
-  this.result = ""
-}
+(function(exports) {
+
+  function Player() {
+  }
+
+exports.Player = Player
+})(this)
