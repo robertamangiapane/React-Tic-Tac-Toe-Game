@@ -36,7 +36,7 @@ Game.prototype._winner = function(){
 }
 
 Game.prototype._check_gameover = function(){
-  result = ""
+  var result = ""
   if(this.board.gameover === false) {
     this.turn = switch_player_turn(this.turn)
     result = "Next round"
@@ -52,8 +52,8 @@ exports.Game = Game
 })(this)
 
 function random_turn(){
-  players = ["X", "O"]
-  player = ~~(Math.random() * players.length);
+  var players = ["X", "O"]
+  var player = ~~(Math.random() * players.length);
   return players[player];
 }
 

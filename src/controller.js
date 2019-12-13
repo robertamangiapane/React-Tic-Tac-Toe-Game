@@ -4,4 +4,5 @@
     var game = null
   }
 
+exports.Controller = Controller
 })

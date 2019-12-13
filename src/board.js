@@ -23,7 +23,7 @@ exports.Board = Board
   })(this)
 
 function check_gameover(rows_columns, turn, fields) {
-  result = check_rows_columns(rows_columns, turn, fields)
+  var result = check_rows_columns(rows_columns, turn, fields)
 
   if(result.includes(3)){
     return "winner"
@@ -35,7 +35,7 @@ function check_gameover(rows_columns, turn, fields) {
 }
 
 function check_rows_columns(rows_columns, turn) {
-  result = []
+  var result = []
 
   rows_columns.forEach(function(row_column){
     result.push(countInArray(row_column, turn))
@@ -54,28 +54,28 @@ function countInArray(array, value) {
 }
 
 function rows_columns_matrix(fields) {
-  rows_and_columns = []
-  fields_slice = fields.slice(0)
-  fields_matrix = []
+  var rows_and_columns = []
+  var fields_slice = fields.slice(0)
+  var fields_matrix = []
   while(fields_slice.length){
     fields_matrix.push(fields_slice.splice(0,3))
   }
 
-  c = 0
-  max = fields_matrix.length - 1
+  var c = 0
+  var max = fields_matrix.length - 1
 
-  row1 = []
-  row2 = []
-  row3 = []
+  var row1 = []
+  var row2 = []
+  var row3 = []
 
-  column1 = []
-  column2 = []
-  column3 = []
+  var column1 = []
+  var column2 = []
+  var column3 = []
 
-  diagonal1 = []
-  diagonal2 = []
+  var diagonal1 = []
+  var diagonal2 = []
 
-  i = 0
+  var i = 0
   for(c = 0; c <= max; c++){
     row1.push(fields_matrix[i][c])
     column1.push(fields_matrix[c][i])
