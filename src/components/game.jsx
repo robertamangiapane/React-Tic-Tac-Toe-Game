@@ -1,7 +1,9 @@
 import React, { Component } from "react"
-// import Board from './components/board';
+import Board from '../components/board';
 import GameClass from "../gameClass"
-import Board from "../board"
+// import Board from "../board"
+
+// var newGame = ""
 
 class Game extends Component {
   constructor(props) {
@@ -9,30 +11,35 @@ class Game extends Component {
     this.state = {
       game : "",
       board : "",
-      // this.turn = this.random_turn.bind(this)
+      turn : "",
+      // test : "test",
+      // playerO : "",
+      // playerX : "",
       startNewGame : this.startNewGame.bind(this),
-      displayBoard : this.displayBoard.bind(this)
+      // displayBoard : this.displayBoard.bind(this)
     }
   }
 
-  random_turn(){
-
-  }
-
   startNewGame(){
-    let newGame = new GameClass()
-     this.setState({game: newGame})
-     newGame.start_game()
-     // this.displayBoard()
-     // console.log(newGame)
-     console.log(this.state.game)
+    var newGame = new GameClass()
+    newGame.start_game()
+    // this.displayBoard()
+    // let board = newGame.board
+    newGame.board.fields[0] = "hello"
+    this.setState({board: newGame.board})
+    this.setState({turn: newGame.turn})
+    this.setState({game: newGame})
+    // console.log(newGame.board.fields)
+
+    // console.log(this.state.board) non stampano nulla
+    // console.log(this.state.game) non stampano nulla
   }
 
   render() {
-    if(this.state.game !== "") {
+    if(this.state.board !== "") {
       return(
         <div className="board">
-        board
+        <Board game={this.state.game}/>
         </div>
       )} else{
     return(

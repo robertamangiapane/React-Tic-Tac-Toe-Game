@@ -1,6 +1,8 @@
-describe("Game", function(){
+import GameClass from "../src/gameClass"
+
+describe("GameClass", function(){
   beforeEach(function(){
-    game = new Game()
+    game = new GameClass()
     game.board = jasmine.createSpy('board')
     game.start_game()
   })

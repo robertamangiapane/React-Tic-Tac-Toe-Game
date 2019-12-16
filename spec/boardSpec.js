@@ -1,6 +1,8 @@
+import BoardClass from "./boardClass"
+
 describe("Board", function(){
     beforeEach(function(){
-      board = new Board()
+      board = new BoardClass()
     })
 
   describe("claim_field", function(){

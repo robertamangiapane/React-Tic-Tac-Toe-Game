@@ -1,14 +1,16 @@
-export default function Board() {
+export default function BoardClass() {
     this.fields = ["", "", "", "", "", "", "", "", ""]
     this.rows_columns = []
     this.gameover = ""
   }
 
-Board.prototype.claim_field = function(turn, index) {
+BoardClass.prototype.claim_field = function(turn, index) {
   if(index < 0 || index > 8 || index === undefined){
     throw 'Input a valid field'
+
   } else if(this.fields[index] === "X" || this.fields[index] === "O") {
     throw 'Field already taken by Player' + this.fields[index]
+    
   } else {
     this.fields[index] = turn
     this.rows_columns = rows_columns_matrix(this.fields)
