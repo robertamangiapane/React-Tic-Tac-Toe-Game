@@ -1,6 +1,4 @@
-(function(exports) {
-
-  function Board() {
+export default function Board() {
     this.fields = ["", "", "", "", "", "", "", "", ""]
     this.rows_columns = []
     this.gameover = ""
@@ -18,9 +16,6 @@ Board.prototype.claim_field = function(turn, index) {
     return 'Field claimed'
   }
 }
-
-exports.Board = Board
-  })(this)
 
 function check_gameover(rows_columns, turn, fields) {
   var result = check_rows_columns(rows_columns, turn, fields)

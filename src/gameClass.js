@@ -1,6 +1,7 @@
-(function(exports) {
+import Board from "./board"
+import Player from "./player"
 
-  function Game(){
+export default function GameClass(){
   this.playerX = ""
   this.playerO = ""
   this.board = ""
@@ -8,15 +9,15 @@
   this.result = ""
 }
 
-Game.prototype.start_game = function(){
+GameClass.prototype.start_game = function(){
   this.board = new Board()
-  this.playerX = new Player()
-  this.playerO = new Player()
+  this.playerX = new Player("")
+  this.playerO = new Player("")
   this.turn = random_turn()
   return this.turn
 }
 
-Game.prototype.claim_field = function(index){
+GameClass.prototype.claim_field = function(index){
   if (this.board.claim_field(this.turn, index) === 'Field claimed') {
     this.result = this._check_gameover()
   } else {
@@ -26,7 +27,7 @@ Game.prototype.claim_field = function(index){
   return this.result
 }
 
-Game.prototype._winner = function(){
+GameClass.prototype._winner = function(){
   if(this.turn === "X"){
     this.result = "Player X win. Player O lose."
   } else if(this.turn === "O"){
@@ -35,7 +36,7 @@ Game.prototype._winner = function(){
   return this.result
 }
 
-Game.prototype._check_gameover = function(){
+GameClass.prototype._check_gameover = function(){
   var result = ""
   if(this.board.gameover === false) {
     this.turn = switch_player_turn(this.turn)
@@ -48,8 +49,6 @@ Game.prototype._check_gameover = function(){
   return result
 }
 
-exports.Game = Game
-})(this)
 
 function random_turn(){
   var players = ["X", "O"]

@@ -21,7 +21,7 @@
   - yarn start
 
 - Setup cypress:
-  - yarn add cypress
+  - yarn add cypress —dev
   - yarn run cypress open (to run the tests)
 
 ---------

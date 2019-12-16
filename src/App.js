@@ -1,16 +1,18 @@
 import React from 'react';
+
 import './App.css';
+import Navbar from './components/navbar';
+import Game from './components/game';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div>
-          <b>Welcome to
-          <br/> Tic Tac Toe Game.
-          </b>
-        </div>
+      <Navbar/>
       </header>
+      <div>
+      <Game/>
+      </div>
     </div>
   );
 }
