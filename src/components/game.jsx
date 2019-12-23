@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import Board from '../components/board';
-import GameClass from "../gameClass"
+import GameClass from "../gameClass";
+
 // import Board from "../board"
 
 // var newGame = ""
@@ -28,10 +29,8 @@ class Game extends Component {
     this.setState({board: newGame.board})
     this.setState({turn: newGame.turn})
     this.setState({game: newGame})
-    // console.log(newGame.board.fields)
+    this.setState({result: newGame.result})
 
-    // console.log(this.state.board) non stampano nulla
-    // console.log(this.state.game) non stampano nulla
   }
 
   render() {

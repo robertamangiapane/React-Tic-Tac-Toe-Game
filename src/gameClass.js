@@ -24,6 +24,8 @@ GameClass.prototype.claim_field = function(index){
     this.result = this.board.claim_field(this.turn, index)
   }
   console.log(this.board.fields)
+  console.log(this.result)
+  console.log(this.turn)
   return this.result
 }
 
