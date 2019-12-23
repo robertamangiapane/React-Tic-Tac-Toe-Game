@@ -13,35 +13,40 @@ class Board extends Component {
     }
   }
 
+  claimField(){
+    this.state.game.claim_field(0)
+    this.setState({fields: this.props.game.board.fields})
+  }
+
   render(){
     return(
       <div className="board-grid">
-        <button>
+        <button onClick={() => this.claimField(0)}>
         {this.state.fields[0]}
         </button>
         <button>
-        field
+        {this.state.fields[1]}
         </button>
         <button>
-        field
+        {this.state.fields[2]}
         </button>
         <button>
-        field
+        {this.state.fields[3]}
         </button>
         <button>
-        field
+        {this.state.fields[4]}
         </button>
         <button>
-        field
+        {this.state.fields[5]}
         </button>
         <button>
-        field
+        {this.state.fields[6]}
         </button>
         <button>
-        field
+        {this.state.fields[7]}
         </button>
         <button>
-        field
+        {this.state.fields[8]}
         </button>
       </div>
     )

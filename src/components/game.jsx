@@ -25,7 +25,6 @@ class Game extends Component {
     newGame.start_game()
     // this.displayBoard()
     // let board = newGame.board
-    newGame.board.fields[0] = "hello"
     this.setState({board: newGame.board})
     this.setState({turn: newGame.turn})
     this.setState({game: newGame})
