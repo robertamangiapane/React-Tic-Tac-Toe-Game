@@ -11,17 +11,16 @@ class Board extends Component {
       fields: this.props.game.board.fields,
       turn: this.props.game.turn,
       result: this.props.game.result,
-      // rows_columns: "",
-      // gameover : "",
       claimField : this.claimField.bind(this),
     }
   }
 
   claimField(item){
-    this.state.game.claim_field(item)
-    this.setState({fields: this.props.game.board.fields, turn: this.props.game.turn, result: this.props.game.result})
-    console.log(this.props.game.turn)
-
+    console.log(this.state.result)
+    if (this.state.result === "Next round") {
+      this.state.game.claim_field(item)
+      this.setState({fields: this.props.game.board.fields, turn: this.props.game.turn, result: this.props.game.result})
+    }
   }
 
   render(){

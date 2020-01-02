@@ -19,7 +19,6 @@ class Turn extends Component {
     return(
       <div>
       Player{this.state.turn}'s turn
-      {console.log(this.state.turn)}
       </div>
     )
   }

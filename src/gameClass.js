@@ -6,7 +6,7 @@ export default function GameClass(){
   this.playerO = ""
   this.board = ""
   this.turn = ""
-  this.result = ""
+  this.result = "Next round"
 }
 
 GameClass.prototype.start_game = function(){
@@ -23,9 +23,6 @@ GameClass.prototype.claim_field = function(index){
   } else {
     this.result = this.board.claim_field(this.turn, index)
   }
-  console.log(this.board.fields)
-  console.log(this.result)
-  console.log(this.turn)
   return this.result
 }
 
