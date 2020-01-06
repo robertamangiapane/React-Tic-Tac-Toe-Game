@@ -56,8 +56,10 @@ class Board extends Component {
         <div className="game-result">
         <Result result={this.state.result}/>
         </div>
+        <div className="grid">
         <div className="board-grid">
           {this.createGrid()}
+        </div>
         </div>
       </div>
 
