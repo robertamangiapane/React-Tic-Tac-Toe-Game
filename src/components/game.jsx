@@ -2,42 +2,37 @@ import React, { Component } from "react"
 import Board from '../components/board';
 import GameClass from "../gameClass";
 
-// import Board from "../board"
-
-// var newGame = ""
-
 class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
       game : "",
       board : "",
-      turn : "",
-      // test : "test",
-      // playerO : "",
-      // playerX : "",
       startNewGame : this.startNewGame.bind(this),
-      // displayBoard : this.displayBoard.bind(this)
     }
   }
 
   startNewGame(){
     var newGame = new GameClass()
     newGame.start_game()
-    // this.displayBoard()
-    // let board = newGame.board
-    this.setState({board: newGame.board})
-    this.setState({turn: newGame.turn})
-    this.setState({game: newGame})
-    this.setState({result: newGame.result})
-
+    this.setState({
+      board: newGame.board,
+      game: newGame,
+    })
   }
 
   render() {
-    if(this.state.board !== "") {
+    if(this.state.game !== "") {
       return(
-        <div className="board">
-        <Board game={this.state.game}/>
+        <div>
+        <div className="game">
+        <button className="start-new-game" onClick={() => this.startNewGame()}>
+        Start a new game
+        </button>
+        </div>
+          <div className="board">
+          <Board game={this.state.game}/>
+          </div>
         </div>
       )} else{
     return(
