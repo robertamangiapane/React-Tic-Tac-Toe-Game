@@ -10,7 +10,7 @@ function App() {
       <header className="App-header">
       <Navbar/>
       </header>
-      <div>
+      <div className="App-game">
       <Game/>
       </div>
     </div>

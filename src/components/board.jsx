@@ -45,6 +45,7 @@ class Board extends Component {
         <div className="game-result">
         <Result result={this.state.result}/>
         </div>
+        <div className="grid">
         <div className="board-grid">
           <button onClick={() => this.claimField(0)}>
           {this.state.fields[0]}
@@ -73,6 +74,7 @@ class Board extends Component {
           <button onClick={() => this.claimField(8)}>
           {this.state.fields[8]}
           </button>
+        </div>
         </div>
       </div>
 
