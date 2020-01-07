@@ -25,13 +25,13 @@ class Player extends Component {
     if( this.props.game.turn === this.state.player.name) {
 
       return(
-        <div>
-        Player{this.state.player.name}'s turn
+        <div className="players-turn">
+          Player{this.state.player.name}'s turn
         </div>
       )} else {
         return (
           <div className="display-none">
-          Player{this.state.player.name}'s turn
+            Player{this.state.player.name}'s turn
           </div>
         )
       }

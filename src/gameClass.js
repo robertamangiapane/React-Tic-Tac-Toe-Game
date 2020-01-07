@@ -1,5 +1,5 @@
 import BoardClass from "./boardClass"
-import Player from "./player"
+import Player from "./playerClass"
 
 export default function GameClass(){
   this.playerX = new Player("X")
@@ -10,7 +10,6 @@ export default function GameClass(){
 }
 
 GameClass.prototype.start_game = function(){
-  // this.board = new BoardClass()
   this.turn = random_turn()
   return this.turn
 }

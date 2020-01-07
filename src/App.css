@@ -16,54 +16,52 @@
 .App-header {
   background-color: #282c34;
   min-height: 100%;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
-  padding: 3vh;
+  padding: 1vh;
 }
 
 .rules {
   background-color: #282c34;
   height: 100%;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   padding: 3vh;
-  padding-top: 1vh;
   color: white;
 }
 
 .grid {
+  display: grid;
+  grid-template-columns: 15% 15% auto 15% 15%;
+
   padding-top: 3vh;
 }
 
-.game-result {
-  padding: 1vh;
-  display: inline-block;
-}
-
-.game-turn {
-  padding: 1vh;
-}
-
 .turn-player-X {
-  float: left;
+  grid-column-start: 1;
+  grid-column-end: 3;
   display: inline-block;
-  align-items: center;
-  align-self: center;
-  align-content: center;
-  margin-bottom: 100vh;
+}
+
+.players-turn {
+  display: inline-block;
 }
 
 .turn-player-O {
-  float: right;
-  display: inline-block;
+  /* grid-column-start: 4;
+  grid-column-end: 5; */
+  /* display: inline-block; */
+}
 
-  margin-bottom: 10vh;
+.board {
+  /* grid-column-start: 3;
+  grid-column-end: 5; */
 }
 
 .board-grid {
@@ -71,6 +69,7 @@
 }
 
 .board-fields {
+  /* display: inline-block; */
   height: 450px;
   width: 450px;
   display: grid;
@@ -87,13 +86,24 @@
   border-bottom: 1px solid black;
 }
 
-.game {
+.new-game {
+  grid-template-columns: 15% 15% auto 15% 15%;
   padding: 1vh;
 }
 
-.game > button {
+.new-game > button {
+  display: inline-block;
   height: 5vh;
   width: 20vh;
+}
+
+.game-result {
+  padding: 1vh;
+  display: inline-block;
+}
+
+.result {
+  display: inline-block;
 }
 
 .display-none {

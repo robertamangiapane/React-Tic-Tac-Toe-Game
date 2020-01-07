@@ -20,7 +20,7 @@ class Result extends Component {
   render(){
     if( this.props.game.result !== "Next round") {
       return(
-        <div>
+        <div className="result">
         {this.props.game.result}
         </div>
       )} else {

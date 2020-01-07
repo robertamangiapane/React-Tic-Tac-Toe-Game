@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import "../components/board.css"
 
 class Board extends Component {
   constructor(props) {

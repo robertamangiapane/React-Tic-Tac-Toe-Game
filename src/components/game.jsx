@@ -10,11 +10,6 @@ class Game extends Component {
     super(props);
     this.state = {
       game: newGame,
-      // turn : newGame.turn,
-      // board: newGame.board,
-      // result: newGame.result,
-      // playerX : newGame.playerX,
-      // playerO : newGame.playerO,
     };
     this.startNewGame = this.startNewGame.bind(this)
     this.handler = this.handler.bind(this)
@@ -30,10 +25,6 @@ class Game extends Component {
     newGame.start_game()
     this.setState({
       game: newGame,
-      // turn : newGame.turn,
-      // result: newGame.result,
-      // playerX : newGame.playerX,
-      // playerO : newGame.playerO,
     })
   }
 
