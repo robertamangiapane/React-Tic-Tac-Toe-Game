@@ -1,7 +1,5 @@
 import React, { Component } from "react"
 import "../components/board.css"
-import Turn from '../components/turn'
-import Result from '../components/result'
 
 class Board extends Component {
   constructor(props) {
@@ -32,7 +30,8 @@ class Board extends Component {
         game: this.props.game,
         fields: this.props.game.board.fields,
         turn: this.props.game.turn,
-        result: this.props.game.result})
+        result: this.props.game.result
+      })
     }
   }
 
@@ -50,14 +49,8 @@ class Board extends Component {
   render(){
     return(
       <div>
-        <div className="game-turn">
-        <Turn turn={this.state.turn}/>
-        </div>
-        <div className="game-result">
-        <Result result={this.state.result}/>
-        </div>
-        <div className="grid">
         <div className="board-grid">
+        <div className="board-fields">
           {this.createGrid()}
         </div>
         </div>

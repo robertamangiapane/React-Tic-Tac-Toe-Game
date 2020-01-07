@@ -37,6 +37,10 @@
   color: white;
 }
 
+.grid {
+  padding-top: 3vh;
+}
+
 .game-result {
   padding: 1vh;
 }
@@ -45,11 +49,27 @@
   padding: 1vh;
 }
 
-.grid {
+.turn-player-X {
+  float: left;
   display: inline-block;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  margin-bottom: 100vh;
+}
+
+.turn-player-O {
+  float: right;
+  display: inline-block;
+
+  margin-bottom: 10vh;
 }
 
 .board-grid {
+  display: inline-block;
+}
+
+.board-fields {
   height: 450px;
   width: 450px;
   display: grid;
@@ -58,7 +78,7 @@
   border-right: 1px solid black;
 }
 
-.board-grid > button {
+.board-fields > button {
   height: 150px;
   width: 150px;
   padding: 10px 10px;
