@@ -21,7 +21,6 @@
   padding: 1vh;
   background-image: url(./ticTacToe.png);
   background-size: 40%;
-  /* background-position: right; */
   background-repeat: no-repeat;
 }
 
@@ -33,11 +32,23 @@
   line-height: 1.5em;
 }
 
+.game-result {
+  padding: 2vh;
+  display: inline-block;
+}
+
+.result {
+  display: inline-block;
+}
+
+.display-none {
+  visibility: hidden;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 15% 15% auto 15% 15%;
-
-  padding-top: 3vh;
+  padding: 2vh;
 }
 
 .turn-player-X {
@@ -90,19 +101,6 @@
   display: inline-block;
   height: 5vh;
   width: 20vh;
-}
-
-.game-result {
-  padding: 1vh;
-  display: inline-block;
-}
-
-.result {
-  display: inline-block;
-}
-
-.display-none {
-  visibility: hidden;
 }
 
 /* .App-link {

@@ -31,6 +31,9 @@ class Game extends Component {
   render() {
       return(
         <div>
+        <div className="game-result">
+          <Result game={this.state.game} handler = {this.handler}/>
+        </div>
         <div className="grid">
           <div className="turn-player-X">
           <Player game={this.state.game} player={this.state.game.playerX}/>
@@ -41,9 +44,6 @@ class Game extends Component {
           <div className="turn-player-O">
           <Player game={this.state.game} player={this.state.game.playerO}/>
           </div>
-        </div>
-        <div className="game-result">
-          <Result game={this.state.game} handler = {this.handler}/>
         </div>
           <div className="new-game">
           <button className="start-new-game" onClick={() => this.startNewGame()}>
