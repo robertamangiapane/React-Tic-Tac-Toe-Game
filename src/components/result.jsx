@@ -4,22 +4,30 @@ class Result extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      result : this.props.result
+      game : this.props.game,
     }
   }
 
   componentDidUpdate(prevProps){
-    if (this.props.result !== prevProps.result) {
-      this.setState({result: this.props.result})
+
+    if (this.props.game !== prevProps.game) {
+      this.setState({
+        game: this.props.game,
+      })
     }
   }
 
   render(){
+    if( this.props.game.result !== "Next round") {
       return(
         <div>
-        Result: {this.props.result}
+        Result: {this.props.game.result}
         </div>
-      )
+      )} else {
+        return(
+        <div>
+        </div>
+      )}
   }
 };
 

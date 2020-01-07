@@ -6,18 +6,18 @@ class Board extends Component {
     super(props);
     this.state = {
       game : this.props.game,
-      fields: this.props.game.board.fields,
       turn: this.props.game.turn,
       result: this.props.game.result,
-      claimField : this.claimField.bind(this),
-    }
+    };
+
+    this.claimField = this.claimField.bind(this)
   }
 
   claimField(item){
     if (this.state.result === "Next round") {
       this.state.game.claim_field(item)
       this.setState({
-        fields: this.props.game.board.fields,
+        game : this.props.game,
         turn: this.props.game.turn,
         result: this.props.game.result
       })
@@ -28,7 +28,6 @@ class Board extends Component {
     if (this.props.game !== prevProps.game) {
       this.setState({
         game: this.props.game,
-        fields: this.props.game.board.fields,
         turn: this.props.game.turn,
         result: this.props.game.result
       })
@@ -40,7 +39,7 @@ class Board extends Component {
 
     for (let i = 0; i < 9; i++) {
       grid.push(<button key={i} onClick={() => this.claimField(i)}>
-      {this.state.fields[i]}
+      {this.state.game.board.fields[i]}
       </button>)
     }
     return grid
@@ -50,7 +49,7 @@ class Board extends Component {
     return(
       <div>
         <div className="board-grid">
-        <div className="board-fields">
+        <div className="board-fields" onClick = {this.props.handler}>
           {this.createGrid()}
         </div>
         </div>

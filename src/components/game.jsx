@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import Board from '../components/board';
+import Result from '../components/result'
+import Player from '../components/player'
 import GameClass from "../gameClass";
 
 class Game extends Component {
@@ -8,9 +10,19 @@ class Game extends Component {
     super(props);
     this.state = {
       game: newGame,
-      board: newGame.board,
-      startNewGame : this.startNewGame.bind(this),
-    }
+      // turn : newGame.turn,
+      // board: newGame.board,
+      // result: newGame.result,
+      // playerX : newGame.playerX,
+      // playerO : newGame.playerO,
+    };
+    this.startNewGame = this.startNewGame.bind(this)
+    this.handler = this.handler.bind(this)
+
+  }
+  handler() {
+    this.setState({
+    })
   }
 
   startNewGame(){
@@ -18,7 +30,10 @@ class Game extends Component {
     newGame.start_game()
     this.setState({
       game: newGame,
-      board: newGame.board
+      // turn : newGame.turn,
+      // result: newGame.result,
+      // playerX : newGame.playerX,
+      // playerO : newGame.playerO,
     })
   }
 
@@ -33,10 +48,21 @@ class Game extends Component {
         When all 9 squares are full, the game is over.
         If no player has 3 marks in a row, the game ends in a tie.
         </div>
-          <div className="board">
-          <Board game={this.state.game}/>
+        <div className="grid">
+          <div className="turn-player-X">
+          <Player game={this.state.game} player={this.state.game.playerX}/>
           </div>
-          <div className="game">
+          <div className="board">
+          <Board game={this.state.game} handler = {this.handler} />
+          </div>
+          <div className="turn-player-O">
+          <Player game={this.state.game} player={this.state.game.playerO}/>
+          </div>
+        </div>
+        <div className="game-result">
+          <Result game={this.state.game} handler = {this.handler}/>
+        </div>
+          <div className="new-game">
           <button className="start-new-game" onClick={() => this.startNewGame()}>
           Start a new game
           </button>
