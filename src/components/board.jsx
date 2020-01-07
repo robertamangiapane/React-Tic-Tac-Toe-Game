@@ -1,4 +1,7 @@
 import React, { Component } from "react"
+// import './playerO.png';
+// import './playerX.png';
+
 
 class Board extends Component {
   constructor(props) {
@@ -14,6 +17,7 @@ class Board extends Component {
 
   claimField(item){
     if (this.state.result === "Next round") {
+
       this.state.game.claim_field(item)
       this.setState({
         game : this.props.game,
