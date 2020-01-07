@@ -43,6 +43,7 @@
 
 .game-result {
   padding: 1vh;
+  display: inline-block;
 }
 
 .game-turn {
@@ -93,6 +94,10 @@
 .game > button {
   height: 5vh;
   width: 20vh;
+}
+
+.display-none {
+  visibility: hidden;
 }
 
 /* .App-link {

@@ -30,7 +30,8 @@ class Player extends Component {
         </div>
       )} else {
         return (
-          <div>
+          <div className="display-none">
+          Player{this.state.player.name}'s turn
           </div>
         )
       }

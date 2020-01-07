@@ -21,11 +21,12 @@ class Result extends Component {
     if( this.props.game.result !== "Next round") {
       return(
         <div>
-        Result: {this.props.game.result}
+        {this.props.game.result}
         </div>
       )} else {
         return(
-        <div>
+        <div className="display-none">
+          {this.props.game.result}
         </div>
       )}
   }
