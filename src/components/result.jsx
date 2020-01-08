@@ -5,6 +5,7 @@ class Result extends Component {
     super(props);
     this.state = {
       game : this.props.game,
+      player : this.props.game
     }
   }
 
@@ -18,7 +19,8 @@ class Result extends Component {
   }
 
   render(){
-    if( this.props.game.result !== "Next round") {
+    console.log(this.props.game.result, this.props.game.turn)
+    if( this.props.game.result !== "Next round" && this.props.game.turn === this.props.player.name) {
       return(
         <div className="result">
         {this.props.game.result}
