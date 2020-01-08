@@ -1,7 +1,6 @@
 import React, { Component } from "react"
-// import './playerO.png';
-// import './playerX.png';
-
+import playerO from "../playerO.png"
+import playerX from "../playerX.png"
 
 class Board extends Component {
   constructor(props) {
@@ -22,9 +21,24 @@ class Board extends Component {
       this.setState({
         game : this.props.game,
         turn: this.props.game.turn,
-        result: this.props.game.result
+        result: this.props.game.result,
       })
     }
+  }
+
+  drawFields(i) {
+    var imgO = ""
+
+    if(this.state.game.board.fields[i] === "O") {
+
+        imgO = <div className="img"> <img src={playerO} alt=""/> </div>
+
+    } else if (this.state.game.board.fields[i] === "X") {
+
+      imgO = <div className="img"> <img src={playerX} alt=""/> </div>
+
+    }
+    return imgO
   }
 
   componentDidUpdate(prevProps){
@@ -42,7 +56,7 @@ class Board extends Component {
 
     for (let i = 0; i < 9; i++) {
       grid.push(<button key={i} onClick={() => this.claimField(i)}>
-      {this.state.game.board.fields[i]}
+      {this.drawFields(i)}
       </button>)
     }
     return grid

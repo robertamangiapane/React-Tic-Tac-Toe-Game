@@ -18,7 +18,6 @@ class Player extends Component {
         player : this.props.player,
       })
     }
-    console.log(this.state.game)
   }
 
   render(){

@@ -92,6 +92,10 @@
   border-bottom: 1px solid black;
 }
 
+.img > img {
+  max-width: 130px;
+}
+
 .new-game {
   grid-template-columns: 15% 15% auto 15% 15%;
   padding: 1vh;
