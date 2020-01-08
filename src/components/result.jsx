@@ -5,6 +5,7 @@ class Result extends Component {
     super(props);
     this.state = {
       game : this.props.game,
+      player : this.props.game
     }
   }
 
