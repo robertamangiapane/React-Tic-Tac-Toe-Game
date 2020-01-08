@@ -32,12 +32,15 @@
   line-height: 1.5em;
 }
 
-.game-result {
+/* .game-result {
   padding: 2vh;
   display: inline-block;
-}
+} */
 
 .result {
+  display: inline-block;
+  padding-top: 50%;
+  font-size: 50px;
   display: inline-block;
 }
 

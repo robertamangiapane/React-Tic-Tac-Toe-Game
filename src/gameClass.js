@@ -25,9 +25,9 @@ GameClass.prototype.claim_field = function(index){
 
 GameClass.prototype._winner = function(){
   if(this.turn === "X"){
-    this.result = "Player X win. Player O lose."
+    this.result = "Player X win."
   } else if(this.turn === "O"){
-    this.result = "Player O win. Player X lose."
+    this.result = "Player O win."
   }
   return this.result
 }

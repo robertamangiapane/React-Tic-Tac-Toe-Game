@@ -31,19 +31,21 @@ class Game extends Component {
   render() {
       return(
         <div>
-        <div className="game-result">
-          <Result game={this.state.game} handler = {this.handler}/>
-        </div>
         <div className="grid">
           <div className="turn-player-X">
           <Player game={this.state.game} player={this.state.game.playerX}/>
+          <Result game={this.state.game} handler={this.handler} player={this.state.game.playerX}/>
           </div>
+
           <div className="board">
           <Board game={this.state.game} handler = {this.handler} />
           </div>
+
           <div className="turn-player-O">
           <Player game={this.state.game} player={this.state.game.playerO}/>
+          <Result game={this.state.game} handler={this.handler} player={this.state.game.playerO}/>
           </div>
+
         </div>
           <div className="new-game">
             <button className="start-new-game" onClick={() => this.startNewGame()}>
