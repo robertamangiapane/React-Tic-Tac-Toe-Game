@@ -46,9 +46,9 @@ class Game extends Component {
           </div>
         </div>
           <div className="new-game">
-          <button className="start-new-game" onClick={() => this.startNewGame()}>
-          Start a new game
-          </button>
+            <button className="start-new-game" onClick={() => this.startNewGame()}>
+            Start a new game
+            </button>
           </div>
         </div>
       )}
