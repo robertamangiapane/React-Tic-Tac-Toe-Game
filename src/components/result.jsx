@@ -19,7 +19,6 @@ class Result extends Component {
   }
 
   render(){
-    console.log(this.props.game.result, this.props.game.turn)
     if( this.props.game.result !== "Next round" && this.props.game.turn === this.props.player.name) {
       return(
         <div className="result">
