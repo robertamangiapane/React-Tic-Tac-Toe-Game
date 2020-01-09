@@ -1,5 +1,5 @@
 {
-  "name": "tic-tac-toe-tech-test",
+  "name": "React-Tic-Tac-Toc-Game",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/robertamangiapane/Tic-Tac-Toe-Tech-Test.git"
+    "url": "git+https://github.com/robertamangiapane/React-Tic-Tac-Toe-Game.git"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,12 +24,12 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/robertamangiapane/Tic-Tac-Toe-Tech-Test/issues"
+    "url": "https://github.com/robertamangiapane/React-Tic-Tac-Toe-Game/issues"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "https://github.com/robertamangiapane/Tic-Tac-Toe-Tech-Test#readme",
+  "homepage": "https://github.com/robertamangiapane/React-Tic-Tac-Toe-Game#readme",
   "devDependencies": {
     "eslint": "^6.6.0",
     "eslint-plugin-jasmine": "^4.1.0",
