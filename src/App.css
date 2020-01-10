@@ -2,76 +2,126 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #7ac45a;
   min-height: 100%;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
-  padding: 1vh;
+  padding-top: 1vh;
   background-image: url(./ticTacToe.png);
   background-size: 40%;
   background-repeat: no-repeat;
 }
 
+@media screen and (min-width: 601px) {
+  div.rules {
+    font-size: 15.5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.rules {
+    font-size: 12px;
+    padding-top: 1vh
+  }
+}
+
 .rules {
   height: 100%;
   flex-direction: column;
-  padding: 3vh;
-  font-size:15.5px;
+  padding-top: 3vh;
+  padding-bottom: 1vh;
   line-height: 1.5em;
 }
 
-/* .game-result {
-  padding: 2vh;
-  display: inline-block;
-} */
+@media screen and (min-width: 601px) {
+  div.result {
+    padding-top: 22.5vh;
+    font-size: 50px;
+  }
+}
 
-.result {
-  display: inline-block;
-  padding-top: 50%;
-  font-size: 50px;
-  display: inline-block;
+@media screen and (max-width: 600px) {
+  div.result {
+    padding-bottom: 2vh;
+    font-size: 10px;
+  }
 }
 
 .display-none {
   visibility: hidden;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 15% 15% auto 15% 15%;
-  padding: 2vh;
+@media screen and (min-width: 601px) {
+  div.grid {
+    padding-top: 2vh;
+    display: grid;
+    grid-template-columns: 15% 15% auto 15% 15%;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  div.grid {
+    padding-top: 1vh;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  div.turn-player-X  {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.turn-player-X  {
+    padding-top: 1vh;
+  }
 }
 
 .turn-player-X {
-  grid-column-start: 1;
-  grid-column-end: 3;
   display: inline-block;
   color: #E21E24
 }
 
+@media screen and (min-width: 601px) {
+  div.turn-player-O  {
+    grid-column-start: 4;
+    grid-column-end: 6;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.turn-player-O  {
+    padding-top: 1vh;
+  }
+}
+
 .turn-player-O {
-  grid-column-start: 4;
-  grid-column-end: 6;
   display: inline-block;
   color: #038ED0;
 }
 
+@media screen and (min-width: 601px) {
+  div.players-turn {
+    padding-top: 25vh;
+  }
+}
+
 .players-turn {
-  padding-top: 50%;
-  font-size: 50px;
   display: inline-block;
+}
+
+@media screen and (min-width: 601px) {
+  div.players-turn{
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.players-turn {
+    font-size: 10px;
+  }
 }
 
 .board-grid {
@@ -79,29 +129,48 @@
 }
 
 .board-fields {
-  height: 450px;
-  width: 450px;
   display: grid;
   grid-template-columns: repeat(3,1fr);
   border-top: 1px solid black;
   border-right: 1px solid black;
 }
 
-.board-fields > button {
-  height: 150px;
-  width: 150px;
-  padding: 10px 10px;
+@media screen and (min-width: 601px) {
+  div.board-fields > .field {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.board-fields > .field  {
+    height: 50px;
+    width: 50px;
+    padding: 4vh;
+  }
+}
+
+.board-fields > .field {
+  text-align: center;
   border-left: 1px solid black;
   border-bottom: 1px solid black;
   background-color: #FFF
 }
 
-.img > img {
-  max-width: 130px;
+.img {
+  display: block;
 }
 
-.new-game {
-  padding: 1vh;
+@media screen and (min-width: 601px) {
+  div.img > img {
+    margin-top: 7vh;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  div.new-game {
+    padding: 5vh;
+  }
 }
 
 .new-game > button {
@@ -115,16 +184,3 @@
   text-align:center;
   background-color: #7ac45a;
 }
-
-/* .App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

@@ -55,23 +55,20 @@ class Board extends Component {
     var grid = []
 
     for (let i = 0; i < 9; i++) {
-      grid.push(<button key={i} onClick={() => this.claimField(i)}>
+      grid.push(<div className="field" key={i} onClick={() => this.claimField(i)}>
       {this.drawFields(i)}
-      </button>)
+      </div>)
     }
     return grid
   }
 
   render(){
     return(
-      <div>
         <div className="board-grid">
         <div className="board-fields" onClick = {this.props.handler}>
           {this.createGrid()}
         </div>
         </div>
-      </div>
-
     )
   }
 }
