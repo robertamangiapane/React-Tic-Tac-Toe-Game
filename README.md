@@ -1,3 +1,6 @@
+## Demo
+`https://game-tic-tac-toe-react.herokuapp.com/`
+
 ## Project Setup
 
 - Setup Jasmine:
