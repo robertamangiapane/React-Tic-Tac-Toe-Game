@@ -10,7 +10,7 @@ BoardClass.prototype.claim_field = function(turn, index) {
 
   } else if(this.fields[index] === "X" || this.fields[index] === "O") {
     throw 'Field already taken by Player' + this.fields[index]
-    
+
   } else {
     this.fields[index] = turn
     this.rows_columns = rows_columns_matrix(this.fields)

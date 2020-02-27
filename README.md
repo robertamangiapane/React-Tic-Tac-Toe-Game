@@ -2,17 +2,17 @@
 
 The project is hosted on Heroku:
 
-`https://game-tic-tac-toe-react.herokuapp.com/`
+[Tic Tac Toe Game Demo](https://game-tic-tac-toe-react.herokuapp.com/)
 
 ## Project Setup
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 - Setup Eslint:
-  - npm install eslint  —save-dev
+  - yarn add eslint
   - ./node_modules/.bin/eslint --init
   - ./node_modules/.bin/eslint yourfile.js (to run eslint)
-  - npm install --save-dev eslint-plugin-jasmine
+  - yarn add eslint-plugin-jasmine
   - Add “plugins": ["jasmine"] to eslint json file
   - Add "jasmine": true to eslint json file
   - Add "extends": "plugin:jasmine/recommended"
@@ -20,6 +20,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - To create a React APP:
   - npx create-react-app my-app
   - cd my-app
+  
+  To launch the server:
+  - yarn install
   - yarn start
 
 ---------
